@@ -1,0 +1,39 @@
+# Chapitre 20 : à chaque push et à chaque demande de fusion, les tests de la version TypeScript du Comptoir,
+# la vérification des types et l'audit du code du chapitre 18. Gratuit : aucun test n'appelle l'API, et ce
+# job n'a aucun accès à Claude. Les comparaisons à la version Python sont sautées : elles demandent son
+# environnement (python/.venv), que ce job n'installe pas ; tests.yml teste la version Python.
+name: Tests du Comptoir (TypeScript)
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-typescript-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: typescript
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: typescript/package-lock.json
+      - name: Installer
+        run: npm ci
+      - name: Tests (sans appel à l'API)
+        run: npm test
+      - name: Types
+        run: npm run typecheck
+      - name: Audit du code (chapitre 18, faux client)
+        run: npx tsx ch18/audit_code.ts --etiquette ci

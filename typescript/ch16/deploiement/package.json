@@ -1,0 +1,13 @@
+{
+  "name": "comptoir-en-ligne",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chapitre 16 : ce que l'image du Comptoir en ligne installe, et rien d'autre (versions figées, empreintes dans package-lock.json)",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "express": "5.3.0",
+    "tsx": "4.23.15",
+    "zod": "4.6.7"
+  }
+}

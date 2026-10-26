@@ -1,0 +1,8 @@
+# Fins de ligne du dépôt d'accompagnement, quel que soit le réglage core.autocrlf du poste.
+# Un PDF peut ne contenir que du texte : Git ne doit jamais changer ses fins de ligne, sans quoi
+# ses tables d'adresses ne correspondent plus (test du chapitre 7).
+*.pdf binary
+*.mcpb binary
+*.sqlite3 binary
+# Les scripts shell tournent sous sh (Linux, macOS, Git Bash), et dans les images Docker : toujours en LF.
+*.sh text eol=lf

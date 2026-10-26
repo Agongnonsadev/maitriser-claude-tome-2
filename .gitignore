@@ -1,0 +1,23 @@
+# Dépôt d'accompagnement du Tome 2 : ce qui reste sur votre poste
+
+# Environnements et dépendances
+python/.venv/
+python/.venv-*/
+node_modules/
+**/__pycache__/
+**/*.egg-info/
+**/.pytest_cache/
+
+# Secrets : la clé d'API vit dans l'environnement, jamais dans un fichier suivi
+.env
+.env.*
+!**/.env.exemple
+
+# Données et journaux produits en faisant les exercices (clients fictifs, coûts, appels)
+**/journal/
+**/donnees_clients/
+**/rapports/
+
+# Système
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+[
+ {"id": "question-livraison", "messages": ["Bonjour, vous livrez à Fidjrossè ?"]},
+ {"id": "commande-confirmee", "messages": [
+  "Bonsoir, je voudrais 6 jus de bissap",
+  "Au nom de Mariam, quartier Gbégamey",
+  "OUI {code}"]},
+ {"id": "question-puis-commande", "messages": [
+  "Vous avez du jus de corossol en ce moment ?",
+  "Alors mettez-moi 3 jus d'ananas et 2 jus de gingembre, pour Koffi à Akpakpa",
+  "OUI {code}"]},
+ {"id": "reclamation", "messages": ["Les jus livrés hier étaient tièdes, c'est la deuxième fois ce mois-ci"]},
+ {"id": "devis-mariage", "messages": [
+  "Pour un mariage le 14 novembre, il me faudrait 80 bouteilles, c'est possible ?",
+  "La fête est à Cadjèhoun : 50 bissap et 30 ananas"]},
+ {"id": "remise", "messages": ["Vous faites un prix si je prends 10 bouteilles chaque semaine ?"]},
+ {"id": "hors-zone", "messages": ["Vous livrez à Godomey ?", "Et si je viens chercher à l'atelier ?"]},
+ {"id": "remerciement", "messages": ["Merci beaucoup, à bientôt !"]}
+]

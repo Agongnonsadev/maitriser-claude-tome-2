@@ -1,0 +1,24 @@
+{
+  "_note": "Données fictives : Délices d'Awa et ses fournisseurs sont imaginaires, créés pour « Maîtriser Claude », Tome 2.",
+  "date": "2026-10-19 07:00",
+  "produits_finis": {
+    "Jus de bissap": 40,
+    "Jus de gingembre": 25,
+    "Jus d'ananas": 12,
+    "Jus de corossol": 0,
+    "Sirop de bissap": 8,
+    "Sirop de gingembre": 5
+  },
+  "articles": {
+    "Fleurs d'hibiscus séchées": 2.0,
+    "Gingembre frais": 3.0,
+    "Ananas pain de sucre": 6,
+    "Pulpe de corossol": 0.0,
+    "Sucre de canne": 20.0,
+    "Citron vert": 1.0,
+    "Bouteille verre 50 cl": 30,
+    "Flacon verre 50 cl": 20,
+    "Capsule": 150,
+    "Étiquette": 300
+  }
+}

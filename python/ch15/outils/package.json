@@ -1,0 +1,9 @@
+{
+  "name": "comptoir-outils-mcp",
+  "private": true,
+  "description": "Chapitre 15 : l'inspecteur MCP et le CLI MCPB, installés une fois, versions figées par package-lock.json",
+  "dependencies": {
+    "@anthropic-ai/mcpb": "2.1.2",
+    "@modelcontextprotocol/inspector": "2.11.0"
+  }
+}

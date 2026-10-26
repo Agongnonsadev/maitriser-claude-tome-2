@@ -1,0 +1,33 @@
+# Chapitre 19 : le Comptoir en ligne sur un petit serveur, derrière Caddy, qui obtient et renouvelle
+# seul le certificat HTTPS (Let's Encrypt). Sur le serveur, dans ce dossier :
+#   cp .env.exemple .env   (puis le remplir ; chmod 600 .env)
+#   docker compose up -d --build
+services:
+  comptoir:
+    build:
+      context: ../..
+      dockerfile: ch19/deploiement/Dockerfile
+    env_file: .env
+    volumes:
+      # Un volume nommé, et non un dossier du serveur : Docker le crée avec les droits de l'image, et
+      # l'utilisateur sans droits du conteneur peut y écrire. Sauvegarde : voir ch19/deploiement/sauvegarder.sh.
+      - comptoir_donnees:/donnees   # boutique, conversations, budget, journal
+    restart: unless-stopped
+    stop_grace_period: 30s          # le temps de finir les messages en file (comptoir/en_ligne.py)
+    # Aucun port publié : seul Caddy joint le Comptoir, par le réseau interne de Docker.
+
+  caddy:
+    image: caddy:2.11.7
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      COMPTOIR_DOMAINE: ${COMPTOIR_DOMAINE}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_donnees:/data
+    restart: unless-stopped
+
+volumes:
+  comptoir_donnees:
+  caddy_donnees:

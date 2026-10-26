@@ -1,0 +1,262 @@
+date,commande,produit,quantite,canal
+2026-08-24,C-0001,Jus de gingembre,5,whatsapp
+2026-08-24,C-0002,Jus de corossol,5,marche
+2026-08-24,C-0003,Jus d'ananas,4,marche
+2026-08-24,C-0003,Jus de gingembre,4,whatsapp
+2026-08-25,C-0004,Jus de bissap,1,telephone
+2026-08-25,C-0005,Jus de corossol,4,whatsapp
+2026-08-25,C-0006,Jus de bissap,3,whatsapp
+2026-08-26,C-0007,Jus d'ananas,1,marche
+2026-08-26,C-0008,Jus de bissap,2,marche
+2026-08-26,C-0009,Jus de bissap,3,whatsapp
+2026-08-26,C-0010,Jus de bissap,5,marche
+2026-08-26,C-0010,Jus de gingembre,4,whatsapp
+2026-08-26,C-0011,Jus d'ananas,5,telephone
+2026-08-26,C-0011,Jus de gingembre,4,marche
+2026-08-26,C-0012,Jus de corossol,5,telephone
+2026-08-27,C-0013,Jus d'ananas,1,marche
+2026-08-27,C-0014,Jus d'ananas,4,telephone
+2026-08-27,C-0015,Jus de gingembre,2,whatsapp
+2026-08-28,C-0016,Jus d'ananas,5,whatsapp
+2026-08-28,C-0016,Sirop de gingembre,2,whatsapp
+2026-08-28,C-0017,Jus de corossol,2,whatsapp
+2026-08-28,C-0017,Jus de bissap,3,whatsapp
+2026-08-28,C-0018,Jus de bissap,5,telephone
+2026-08-28,C-0019,Jus de bissap,4,telephone
+2026-08-28,C-0020,Jus de corossol,1,whatsapp
+2026-08-28,C-0020,Jus de gingembre,3,telephone
+2026-08-28,C-0021,Jus de gingembre,5,whatsapp
+2026-08-29,C-0022,Sirop de gingembre,2,whatsapp
+2026-08-29,C-0023,Sirop de bissap,2,whatsapp
+2026-08-29,C-0024,Jus d'ananas,4,whatsapp
+2026-08-29,C-0025,Jus de bissap,4,marche
+2026-08-29,C-0025,Sirop de bissap,1,marche
+2026-08-29,C-0026,Jus de bissap,5,whatsapp
+2026-08-29,C-0027,Jus d'ananas,3,whatsapp
+2026-08-31,C-0028,Jus d'ananas,5,telephone
+2026-08-31,C-0029,Jus de gingembre,4,marche
+2026-08-31,C-0030,Sirop de gingembre,2,whatsapp
+2026-09-01,C-0031,Sirop de bissap,2,marche
+2026-09-01,C-0032,Jus de bissap,2,telephone
+2026-09-01,C-0033,Sirop de gingembre,2,whatsapp
+2026-09-01,C-0034,Jus de corossol,3,whatsapp
+2026-09-01,C-0035,Jus de gingembre,3,whatsapp
+2026-09-01,C-0036,Jus de bissap,4,marche
+2026-09-02,C-0037,Jus de gingembre,2,telephone
+2026-09-02,C-0038,Jus de gingembre,2,whatsapp
+2026-09-02,C-0039,Jus de bissap,2,whatsapp
+2026-09-02,C-0039,Jus de gingembre,5,whatsapp
+2026-09-02,C-0040,Jus de corossol,4,whatsapp
+2026-09-02,C-0040,Jus de gingembre,2,marche
+2026-09-03,C-0041,Jus de bissap,2,telephone
+2026-09-03,C-0042,Jus de gingembre,4,whatsapp
+2026-09-03,C-0043,Jus de bissap,3,telephone
+2026-09-03,C-0044,Jus de corossol,3,telephone
+2026-09-03,C-0044,Sirop de gingembre,1,whatsapp
+2026-09-04,C-0045,Jus de bissap,3,whatsapp
+2026-09-04,C-0045,Jus d'ananas,2,whatsapp
+2026-09-04,C-0046,Sirop de gingembre,2,whatsapp
+2026-09-04,C-0047,Jus de corossol,2,whatsapp
+2026-09-04,C-0047,Jus de gingembre,3,whatsapp
+2026-09-04,C-0048,Jus de gingembre,5,marche
+2026-09-04,C-0049,Jus de bissap,3,marche
+2026-09-04,C-0050,Jus de gingembre,5,whatsapp
+2026-09-05,C-0051,Jus d'ananas,1,telephone
+2026-09-05,C-0052,Jus de bissap,1,whatsapp
+2026-09-05,C-0053,Jus de gingembre,1,marche
+2026-09-05,C-0054,Jus de bissap,1,whatsapp
+2026-09-07,C-0055,Jus de bissap,1,whatsapp
+2026-09-07,C-0056,Jus de corossol,3,telephone
+2026-09-07,C-0056,Sirop de bissap,1,whatsapp
+2026-09-07,C-0057,Jus de bissap,3,whatsapp
+2026-09-07,C-0058,Jus d'ananas,5,whatsapp
+2026-09-07,C-0059,Jus d'ananas,5,marche
+2026-09-08,C-0060,Jus de bissap,4,telephone
+2026-09-08,C-0061,Jus d'ananas,5,whatsapp
+2026-09-08,C-0062,Jus de corossol,1,telephone
+2026-09-08,C-0062,Jus de bissap,1,whatsapp
+2026-09-09,C-0063,Jus d'ananas,1,whatsapp
+2026-09-09,C-0064,Jus de bissap,5,whatsapp
+2026-09-09,C-0064,Sirop de bissap,1,marche
+2026-09-09,C-0065,Jus d'ananas,1,whatsapp
+2026-09-09,C-0066,Jus de bissap,2,marche
+2026-09-09,C-0067,Jus de gingembre,3,whatsapp
+2026-09-10,C-0068,Jus de bissap,4,telephone
+2026-09-10,C-0069,Jus d'ananas,2,whatsapp
+2026-09-10,C-0070,Jus de gingembre,5,marche
+2026-09-10,C-0071,Jus de corossol,2,whatsapp
+2026-09-10,C-0071,Jus d'ananas,1,whatsapp
+2026-09-10,C-0072,Jus de bissap,2,marche
+2026-09-10,C-0072,Sirop de gingembre,1,whatsapp
+2026-09-10,C-0073,Jus de gingembre,5,whatsapp
+2026-09-11,C-0074,Jus de bissap,1,whatsapp
+2026-09-11,C-0075,Jus de bissap,5,whatsapp
+2026-09-11,C-0076,Jus de bissap,2,marche
+2026-09-11,C-0076,Jus d'ananas,3,whatsapp
+2026-09-11,C-0077,Jus de bissap,4,telephone
+2026-09-11,C-0078,Jus de corossol,3,whatsapp
+2026-09-11,C-0078,Jus d'ananas,2,telephone
+2026-09-12,C-0079,Jus de corossol,5,telephone
+2026-09-12,C-0079,Sirop de bissap,1,whatsapp
+2026-09-12,C-0080,Jus de bissap,5,whatsapp
+2026-09-12,C-0081,Jus d'ananas,1,whatsapp
+2026-09-12,C-0082,Jus de corossol,5,whatsapp
+2026-09-14,C-0083,Jus de bissap,5,whatsapp
+2026-09-14,C-0083,Sirop de gingembre,1,whatsapp
+2026-09-14,C-0084,Jus d'ananas,3,marche
+2026-09-14,C-0085,Jus de bissap,5,whatsapp
+2026-09-15,C-0086,Jus de bissap,3,whatsapp
+2026-09-15,C-0087,Sirop de gingembre,1,whatsapp
+2026-09-15,C-0088,Jus de bissap,5,whatsapp
+2026-09-15,C-0088,Sirop de bissap,1,whatsapp
+2026-09-15,C-0089,Jus de gingembre,2,whatsapp
+2026-09-16,C-0090,Jus de corossol,1,whatsapp
+2026-09-16,C-0091,Jus de bissap,2,marche
+2026-09-16,C-0092,Jus de bissap,3,telephone
+2026-09-17,C-0093,Jus de bissap,5,whatsapp
+2026-09-17,C-0094,Jus de bissap,4,whatsapp
+2026-09-17,C-0095,Jus de corossol,4,marche
+2026-09-18,C-0096,Jus de bissap,1,telephone
+2026-09-18,C-0097,Jus de bissap,2,whatsapp
+2026-09-18,C-0098,Jus de gingembre,5,whatsapp
+2026-09-18,C-0099,Sirop de bissap,2,telephone
+2026-09-18,C-0100,Jus de bissap,4,whatsapp
+2026-09-19,C-0101,Jus de bissap,5,telephone
+2026-09-19,C-0102,Jus de bissap,5,whatsapp
+2026-09-19,C-0103,Jus de corossol,3,whatsapp
+2026-09-19,C-0103,Jus de bissap,4,whatsapp
+2026-09-19,C-0104,Jus de gingembre,3,whatsapp
+2026-09-19,C-0105,Sirop de gingembre,1,whatsapp
+2026-09-21,C-0106,Jus de bissap,5,whatsapp
+2026-09-21,C-0106,Jus de gingembre,4,whatsapp
+2026-09-21,C-0107,Jus d'ananas,4,marche
+2026-09-21,C-0108,Jus de gingembre,3,whatsapp
+2026-09-21,C-0109,Jus de bissap,5,whatsapp
+2026-09-21,C-0109,Jus d'ananas,2,whatsapp
+2026-09-21,C-0110,Jus de corossol,4,whatsapp
+2026-09-21,C-0110,Jus d'ananas,1,whatsapp
+2026-09-22,C-0111,Jus d'ananas,3,whatsapp
+2026-09-22,C-0112,Jus d'ananas,4,marche
+2026-09-22,C-0113,Jus de gingembre,3,whatsapp
+2026-09-22,C-0114,Jus de gingembre,1,whatsapp
+2026-09-23,C-0115,Sirop de gingembre,2,whatsapp
+2026-09-23,C-0116,Jus d'ananas,1,marche
+2026-09-23,C-0117,Jus d'ananas,5,whatsapp
+2026-09-23,C-0118,Jus de bissap,4,whatsapp
+2026-09-24,C-0119,Sirop de gingembre,2,whatsapp
+2026-09-24,C-0120,Jus de bissap,5,telephone
+2026-09-24,C-0121,Jus de gingembre,3,whatsapp
+2026-09-24,C-0122,Jus de gingembre,2,whatsapp
+2026-09-25,C-0123,Jus de bissap,4,whatsapp
+2026-09-25,C-0124,Jus de bissap,4,whatsapp
+2026-09-25,C-0125,Jus de gingembre,4,whatsapp
+2026-09-25,C-0126,Sirop de gingembre,1,marche
+2026-09-25,C-0127,Jus de gingembre,3,whatsapp
+2026-09-25,C-0128,Jus de bissap,5,whatsapp
+2026-09-26,C-0129,Sirop de bissap,1,whatsapp
+2026-09-26,C-0129,Jus de gingembre,4,whatsapp
+2026-09-26,C-0130,Jus de gingembre,5,whatsapp
+2026-09-26,C-0131,Jus d'ananas,3,telephone
+2026-09-26,C-0132,Jus de gingembre,3,whatsapp
+2026-09-26,C-0133,Jus d'ananas,2,whatsapp
+2026-09-26,C-0133,Jus de gingembre,5,marche
+2026-09-26,C-0134,Jus de bissap,60,evenement
+2026-09-28,C-0135,Jus de bissap,5,whatsapp
+2026-09-28,C-0136,Jus de bissap,3,whatsapp
+2026-09-28,C-0137,Jus de bissap,5,whatsapp
+2026-09-28,C-0138,Jus de gingembre,2,whatsapp
+2026-09-29,C-0139,Jus de bissap,5,telephone
+2026-09-29,C-0140,Jus de bissap,5,whatsapp
+2026-09-29,C-0141,Jus de gingembre,4,whatsapp
+2026-09-29,C-0142,Jus de bissap,5,whatsapp
+2026-09-30,C-0143,Jus de bissap,3,marche
+2026-09-30,C-0144,Jus de bissap,1,whatsapp
+2026-09-30,C-0145,Jus de corossol,1,telephone
+2026-09-30,C-0146,Jus de corossol,2,whatsapp
+2026-09-30,C-0146,Jus de bissap,4,whatsapp
+2026-09-30,C-0147,Jus de bissap,4,telephone
+2026-09-30,C-0148,Jus de corossol,3,telephone
+2026-09-30,C-0148,Jus d'ananas,5,marche
+2026-10-01,C-0149,Jus de corossol,2,whatsapp
+2026-10-01,C-0150,Jus d'ananas,3,marche
+2026-10-01,C-0151,Jus de bissap,2,telephone
+2026-10-01,C-0152,Sirop de bissap,2,whatsapp
+2026-10-01,C-0153,Jus de gingembre,3,whatsapp
+2026-10-01,C-0154,Jus de bissap,4,marche
+2026-10-02,C-0155,Jus de corossol,4,whatsapp
+2026-10-02,C-0156,Jus d'ananas,5,whatsapp
+2026-10-02,C-0157,Jus de gingembre,5,marche
+2026-10-02,C-0158,Sirop de bissap,2,whatsapp
+2026-10-02,C-0159,Jus de gingembre,3,marche
+2026-10-02,C-0160,Jus de corossol,3,whatsapp
+2026-10-03,C-0161,Jus de bissap,4,marche
+2026-10-03,C-0162,Jus de bissap,5,telephone
+2026-10-03,C-0163,Jus de bissap,3,whatsapp
+2026-10-03,C-0163,Jus de gingembre,1,whatsapp
+2026-10-05,C-0164,Jus de bissap,3,whatsapp
+2026-10-05,C-0165,Jus d'ananas,1,marche
+2026-10-05,C-0166,Jus d'ananas,3,whatsapp
+2026-10-05,C-0167,Sirop de gingembre,1,whatsapp
+2026-10-05,C-0168,Jus de bissap,5,whatsapp
+2026-10-05,C-0168,Jus de gingembre,4,whatsapp
+2026-10-05,C-0169,Jus de bissap,2,whatsapp
+2026-10-06,C-0170,Jus de bissap,2,telephone
+2026-10-06,C-0170,Jus de gingembre,1,marche
+2026-10-06,C-0171,Jus de bissap,5,whatsapp
+2026-10-06,C-0171,Jus d'ananas,3,telephone
+2026-10-06,C-0172,Jus de bissap,5,whatsapp
+2026-10-06,C-0173,Jus de gingembre,2,marche
+2026-10-06,C-0174,Jus de gingembre,4,telephone
+2026-10-06,C-0175,Jus d'ananas,4,telephone
+2026-10-07,C-0176,Jus de bissap,3,whatsapp
+2026-10-07,C-0177,Sirop de bissap,1,whatsapp
+2026-10-07,C-0178,Sirop de bissap,1,whatsapp
+2026-10-08,C-0179,Jus de bissap,4,marche
+2026-10-08,C-0179,Jus de gingembre,1,whatsapp
+2026-10-08,C-0180,Jus de bissap,1,whatsapp
+2026-10-08,C-0181,Jus de bissap,5,whatsapp
+2026-10-09,C-0182,Jus de bissap,5,whatsapp
+2026-10-09,C-0183,Jus de gingembre,1,marche
+2026-10-09,C-0184,Jus de bissap,4,telephone
+2026-10-09,C-0185,Jus de bissap,1,telephone
+2026-10-09,C-0186,Jus de bissap,5,whatsapp
+2026-10-09,C-0186,Jus de gingembre,2,whatsapp
+2026-10-09,C-0187,Jus de gingembre,5,whatsapp
+2026-10-10,C-0188,Sirop de gingembre,1,telephone
+2026-10-10,C-0189,Jus de bissap,1,whatsapp
+2026-10-10,C-0190,Jus d'ananas,4,whatsapp
+2026-10-10,C-0191,Jus de bissap,5,whatsapp
+2026-10-10,C-0192,Jus de bissap,4,whatsapp
+2026-10-10,C-0193,Jus de gingembre,3,marche
+2026-10-12,C-0194,Jus d'ananas,5,whatsapp
+2026-10-12,C-0195,Jus de bissap,4,whatsapp
+2026-10-12,C-0196,Jus de gingembre,5,marche
+2026-10-12,C-0197,Jus de bissap,5,whatsapp
+2026-10-12,C-0198,Jus de bissap,2,telephone
+2026-10-13,C-0199,Jus de gingembre,2,marche
+2026-10-13,C-0200,Jus de bissap,5,marche
+2026-10-13,C-0201,Jus de bissap,3,whatsapp
+2026-10-14,C-0202,Sirop de bissap,2,whatsapp
+2026-10-14,C-0203,Jus de bissap,3,telephone
+2026-10-14,C-0203,Jus de gingembre,1,telephone
+2026-10-14,C-0204,Jus de bissap,4,whatsapp
+2026-10-14,C-0205,Jus de bissap,5,telephone
+2026-10-14,C-0206,Jus de bissap,2,whatsapp
+2026-10-14,C-0207,Jus de bissap,3,telephone
+2026-10-15,C-0208,Jus de bissap,1,whatsapp
+2026-10-15,C-0209,Jus de bissap,5,telephone
+2026-10-15,C-0210,Jus de gingembre,3,marche
+2026-10-15,C-0211,Jus de bissap,4,whatsapp
+2026-10-15,C-0211,Jus de gingembre,2,marche
+2026-10-16,C-0212,Jus d'ananas,2,whatsapp
+2026-10-16,C-0213,Jus d'ananas,5,whatsapp
+2026-10-16,C-0214,Jus de gingembre,1,marche
+2026-10-16,C-0214,Sirop de gingembre,2,whatsapp
+2026-10-16,C-0215,Jus de gingembre,4,whatsapp
+2026-10-16,C-0216,Jus d'ananas,5,marche
+2026-10-17,C-0217,Jus d'ananas,5,whatsapp
+2026-10-17,C-0218,Jus de bissap,4,telephone
+2026-10-17,C-0219,Jus d'ananas,2,marche
+2026-10-17,C-0220,Jus de bissap,1,whatsapp
+2026-10-17,C-0220,Jus d'ananas,2,whatsapp
+2026-10-17,C-0221,Jus de gingembre,4,telephone

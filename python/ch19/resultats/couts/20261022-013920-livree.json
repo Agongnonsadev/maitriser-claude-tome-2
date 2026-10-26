@@ -1,0 +1,588 @@
+{
+ "variante": "livree",
+ "reglages": {},
+ "resume": {
+  "conversations": 24,
+  "messages": 42,
+  "cout_total": 0.0316,
+  "cout_moyen_conversation": 0.00131,
+  "cout_moyen_message": 0.00075,
+  "appels_par_message": 2.45,
+  "tokens": {
+   "entree": 48202,
+   "ecriture_cache": 11874,
+   "lecture_cache": 719226,
+   "sortie": 16896
+  },
+  "latence_mediane_s": 6.9,
+  "latence_p90_s": 9.7,
+  "commandes_creees": 6,
+  "erreurs": []
+ },
+ "conversations": [
+  {
+   "variante": "livree",
+   "id": "question-livraison",
+   "essai": 1,
+   "messages": 1,
+   "categories": [
+    "information"
+   ],
+   "cout_dollars": 0.000262,
+   "appels": 2,
+   "tokens": {
+    "entree": 1155,
+    "ecriture_cache": 0,
+    "lecture_cache": 9189,
+    "sortie": 110
+   },
+   "durees_ms": [
+    3072
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "commande-confirmee",
+   "essai": 1,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "autre",
+    "commande"
+   ],
+   "cout_dollars": 0.001384,
+   "appels": 6,
+   "tokens": {
+    "entree": 2244,
+    "ecriture_cache": 734,
+    "lecture_cache": 53992,
+    "sortie": 1056
+   },
+   "durees_ms": [
+    6713,
+    8341,
+    1
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "question-puis-commande",
+   "essai": 1,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.001475,
+   "appels": 7,
+   "tokens": {
+    "entree": 2269,
+    "ecriture_cache": 1033,
+    "lecture_cache": 67984,
+    "sortie": 878
+   },
+   "durees_ms": [
+    6861,
+    8125,
+    0
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "reclamation",
+   "essai": 1,
+   "messages": 1,
+   "categories": [
+    "reclamation"
+   ],
+   "cout_dollars": 0.005746,
+   "appels": 6,
+   "tokens": {
+    "entree": 4489,
+    "ecriture_cache": 0,
+    "lecture_cache": 0,
+    "sortie": 649
+   },
+   "durees_ms": [
+    11761
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "devis-mariage",
+   "essai": 1,
+   "messages": 2,
+   "categories": [
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.002214,
+   "appels": 6,
+   "tokens": {
+    "entree": 2268,
+    "ecriture_cache": 1973,
+    "lecture_cache": 54933,
+    "sortie": 2383
+   },
+   "durees_ms": [
+    9685,
+    10240
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remise",
+   "essai": 1,
+   "messages": 1,
+   "categories": [
+    "commande"
+   ],
+   "cout_dollars": 0.00069,
+   "appels": 3,
+   "tokens": {
+    "entree": 1130,
+    "ecriture_cache": 447,
+    "lecture_cache": 26621,
+    "sortie": 509
+   },
+   "durees_ms": [
+    7436
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "hors-zone",
+   "essai": 1,
+   "messages": 2,
+   "categories": [
+    "information",
+    "information"
+   ],
+   "cout_dollars": 0.000546,
+   "appels": 4,
+   "tokens": {
+    "entree": 2286,
+    "ecriture_cache": 0,
+    "lecture_cache": 18378,
+    "sortie": 267
+   },
+   "durees_ms": [
+    2228,
+    2436
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remerciement",
+   "essai": 1,
+   "messages": 1,
+   "categories": [
+    "autre"
+   ],
+   "cout_dollars": 0.000344,
+   "appels": 2,
+   "tokens": {
+    "entree": 1115,
+    "ecriture_cache": 28,
+    "lecture_cache": 13290,
+    "sortie": 193
+   },
+   "durees_ms": [
+    3700
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "question-livraison",
+   "essai": 2,
+   "messages": 1,
+   "categories": [
+    "information"
+   ],
+   "cout_dollars": 0.000274,
+   "appels": 2,
+   "tokens": {
+    "entree": 1155,
+    "ecriture_cache": 0,
+    "lecture_cache": 9189,
+    "sortie": 133
+   },
+   "durees_ms": [
+    2268
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "commande-confirmee",
+   "essai": 2,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "autre",
+    "commande"
+   ],
+   "cout_dollars": 0.001311,
+   "appels": 6,
+   "tokens": {
+    "entree": 2244,
+    "ecriture_cache": 726,
+    "lecture_cache": 54055,
+    "sortie": 910
+   },
+   "durees_ms": [
+    7246,
+    7381,
+    0
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "question-puis-commande",
+   "essai": 2,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.001628,
+   "appels": 6,
+   "tokens": {
+    "entree": 2267,
+    "ecriture_cache": 1366,
+    "lecture_cache": 54146,
+    "sortie": 1379
+   },
+   "durees_ms": [
+    6861,
+    8323,
+    0
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "reclamation",
+   "essai": 2,
+   "messages": 1,
+   "categories": [
+    "reclamation"
+   ],
+   "cout_dollars": 0.002847,
+   "appels": 4,
+   "tokens": {
+    "entree": 3155,
+    "ecriture_cache": 0,
+    "lecture_cache": 0,
+    "sortie": 466
+   },
+   "durees_ms": [
+    6654
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "devis-mariage",
+   "essai": 2,
+   "messages": 2,
+   "categories": [
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.001607,
+   "appels": 6,
+   "tokens": {
+    "entree": 2268,
+    "ecriture_cache": 1226,
+    "lecture_cache": 54429,
+    "sortie": 1365
+   },
+   "durees_ms": [
+    7394,
+    8136
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remise",
+   "essai": 2,
+   "messages": 1,
+   "categories": [
+    "commande"
+   ],
+   "cout_dollars": 0.000679,
+   "appels": 3,
+   "tokens": {
+    "entree": 1130,
+    "ecriture_cache": 383,
+    "lecture_cache": 26662,
+    "sortie": 503
+   },
+   "durees_ms": [
+    7460
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "hors-zone",
+   "essai": 2,
+   "messages": 2,
+   "categories": [
+    "information",
+    "information"
+   ],
+   "cout_dollars": 0.000552,
+   "appels": 4,
+   "tokens": {
+    "entree": 2286,
+    "ecriture_cache": 0,
+    "lecture_cache": 18378,
+    "sortie": 280
+   },
+   "durees_ms": [
+    10928,
+    2794
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remerciement",
+   "essai": 2,
+   "messages": 1,
+   "categories": [
+    "autre"
+   ],
+   "cout_dollars": 0.000379,
+   "appels": 2,
+   "tokens": {
+    "entree": 1115,
+    "ecriture_cache": 0,
+    "lecture_cache": 13318,
+    "sortie": 268
+   },
+   "durees_ms": [
+    3729
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "question-livraison",
+   "essai": 3,
+   "messages": 1,
+   "categories": [
+    "information"
+   ],
+   "cout_dollars": 0.00027,
+   "appels": 2,
+   "tokens": {
+    "entree": 1155,
+    "ecriture_cache": 0,
+    "lecture_cache": 9189,
+    "sortie": 125
+   },
+   "durees_ms": [
+    2250
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "commande-confirmee",
+   "essai": 3,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "autre",
+    "commande"
+   ],
+   "cout_dollars": 0.001352,
+   "appels": 6,
+   "tokens": {
+    "entree": 2244,
+    "ecriture_cache": 744,
+    "lecture_cache": 54101,
+    "sortie": 987
+   },
+   "durees_ms": [
+    7601,
+    7985,
+    0
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "question-puis-commande",
+   "essai": 3,
+   "messages": 3,
+   "categories": [
+    "commande",
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.001526,
+   "appels": 7,
+   "tokens": {
+    "entree": 2269,
+    "ecriture_cache": 953,
+    "lecture_cache": 67907,
+    "sortie": 1001
+   },
+   "durees_ms": [
+    6550,
+    8652,
+    0
+   ],
+   "commandes": 1,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "reclamation",
+   "essai": 3,
+   "messages": 1,
+   "categories": [
+    "reclamation"
+   ],
+   "cout_dollars": 0.002871,
+   "appels": 4,
+   "tokens": {
+    "entree": 3159,
+    "ecriture_cache": 0,
+    "lecture_cache": 0,
+    "sortie": 437
+   },
+   "durees_ms": [
+    6996
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "devis-mariage",
+   "essai": 3,
+   "messages": 2,
+   "categories": [
+    "commande",
+    "commande"
+   ],
+   "cout_dollars": 0.001994,
+   "appels": 6,
+   "tokens": {
+    "entree": 2268,
+    "ecriture_cache": 1848,
+    "lecture_cache": 55107,
+    "sortie": 1971
+   },
+   "durees_ms": [
+    10391,
+    8526
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remise",
+   "essai": 3,
+   "messages": 1,
+   "categories": [
+    "commande"
+   ],
+   "cout_dollars": 0.000707,
+   "appels": 3,
+   "tokens": {
+    "entree": 1130,
+    "ecriture_cache": 413,
+    "lecture_cache": 26662,
+    "sortie": 552
+   },
+   "durees_ms": [
+    8080
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "hors-zone",
+   "essai": 3,
+   "messages": 2,
+   "categories": [
+    "information",
+    "information"
+   ],
+   "cout_dollars": 0.000538,
+   "appels": 4,
+   "tokens": {
+    "entree": 2286,
+    "ecriture_cache": 0,
+    "lecture_cache": 18378,
+    "sortie": 251
+   },
+   "durees_ms": [
+    2673,
+    4618
+   ],
+   "commandes": 0,
+   "erreurs": []
+  },
+  {
+   "variante": "livree",
+   "id": "remerciement",
+   "essai": 3,
+   "messages": 1,
+   "categories": [
+    "autre"
+   ],
+   "cout_dollars": 0.000356,
+   "appels": 2,
+   "tokens": {
+    "entree": 1115,
+    "ecriture_cache": 0,
+    "lecture_cache": 13318,
+    "sortie": 223
+   },
+   "durees_ms": [
+    3627
+   ],
+   "commandes": 0,
+   "erreurs": []
+  }
+ ]
+}

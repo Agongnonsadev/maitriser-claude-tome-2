@@ -1,0 +1,101 @@
+{
+  "_note": "Données fictives : Délices d'Awa et ses fournisseurs sont imaginaires, créés pour « Maîtriser Claude », Tome 2.",
+  "offres": [
+    {
+      "article": "Fleurs d'hibiscus séchées",
+      "fournisseur": "Coopérative des Collines",
+      "delai_jours": 3,
+      "minimum": 5,
+      "conditionnement": 1,
+      "prix_fcfa": 3500
+    },
+    {
+      "article": "Gingembre frais",
+      "fournisseur": "Ferme des Collines",
+      "delai_jours": 2,
+      "minimum": 10,
+      "conditionnement": 5,
+      "prix_fcfa": 1200
+    },
+    {
+      "article": "Gingembre frais",
+      "fournisseur": "Grossiste Tokpa",
+      "delai_jours": 1,
+      "minimum": 5,
+      "conditionnement": 5,
+      "prix_fcfa": 1400
+    },
+    {
+      "article": "Ananas pain de sucre",
+      "fournisseur": "Plantation d'Allada",
+      "delai_jours": 7,
+      "minimum": 20,
+      "conditionnement": 10,
+      "prix_fcfa": 400
+    },
+    {
+      "article": "Pulpe de corossol",
+      "fournisseur": "Ferme Agbo",
+      "delai_jours": 5,
+      "minimum": 5,
+      "conditionnement": 1,
+      "prix_fcfa": 2000
+    },
+    {
+      "article": "Sucre de canne",
+      "fournisseur": "Sucrerie Atlantique",
+      "delai_jours": 2,
+      "minimum": 25,
+      "conditionnement": 25,
+      "prix_fcfa": 650
+    },
+    {
+      "article": "Citron vert",
+      "fournisseur": "Ferme des Collines",
+      "delai_jours": 2,
+      "minimum": 2,
+      "conditionnement": 1,
+      "prix_fcfa": 1000
+    },
+    {
+      "article": "Bouteille verre 50 cl",
+      "fournisseur": "Verrerie du Port",
+      "delai_jours": 3,
+      "minimum": 100,
+      "conditionnement": 50,
+      "prix_fcfa": 150
+    },
+    {
+      "article": "Bouteille verre 50 cl",
+      "fournisseur": "Emballages Akwa",
+      "delai_jours": 2,
+      "minimum": 50,
+      "conditionnement": 50,
+      "prix_fcfa": 180
+    },
+    {
+      "article": "Flacon verre 50 cl",
+      "fournisseur": "Verrerie du Port",
+      "delai_jours": 3,
+      "minimum": 50,
+      "conditionnement": 25,
+      "prix_fcfa": 200
+    },
+    {
+      "article": "Capsule",
+      "fournisseur": "Emballages Akwa",
+      "delai_jours": 2,
+      "minimum": 200,
+      "conditionnement": 100,
+      "prix_fcfa": 15
+    },
+    {
+      "article": "Étiquette",
+      "fournisseur": "Imprimerie Lagune",
+      "delai_jours": 4,
+      "minimum": 200,
+      "conditionnement": 100,
+      "prix_fcfa": 25
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Chapitre 20 : l'état du hook de fin de tour et le journal des outils, propres à chaque poste.
+# Les réglages personnels aussi.
+.dernier-vert
+journal-outils.jsonl
+settings.local.json

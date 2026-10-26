@@ -1,0 +1,7 @@
+# Chapitre 19 : les dépendances directes de l'image du Comptoir en ligne, à versions figées.
+# La liste complète, avec les empreintes : uv pip compile requirements.in --generate-hashes \
+#   --python-version 3.13 --python-platform x86_64-manylinux_2_28 -o requirements.txt
+anthropic==2.1.0     # API 2026-10-21 (chapitre 21)
+fastapi==0.150.0
+uvicorn==0.54.0
+httpx2==2.15.1   # la version des tests locaux (le SDK accepte aussi la 2.16)

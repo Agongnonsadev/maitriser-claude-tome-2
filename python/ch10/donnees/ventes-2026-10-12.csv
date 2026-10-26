@@ -1,0 +1,78 @@
+date,commande,produit,quantite,prix_unitaire_fcfa,quartier,canal
+2026-10-12,C-0001,Sirop de gingembre,3,2500,Fidjrossè,marche
+2026-10-12,C-0001,Jus de bissap,6,1000,Fidjrossè,marche
+2026-10-12,C-0001,Jus de gingembre,6,1000,Fidjrossè,marche
+2026-10-12,C-0002,Sirop de gingembre,1,2500,Gbégamey,marche
+2026-10-12,C-0002,Jus de corossol,2,1000,Gbégamey,marche
+2026-10-12,C-0002,Sirop de bissap,3,2500,Gbégamey,marche
+2026-10-12,C-0003,Jus de bissap,2,1000,Akpakpa,whatsapp
+2026-10-12,C-0003,Jus de corossol,8,1000,Akpakpa,whatsapp
+2026-10-12,C-0004,Jus d'ananas,4,1000,Agla,telephone
+2026-10-12,C-0004,Jus de gingembre,4,1000,Agla,telephone
+2026-10-12,C-0004,Jus de corossol,4,1000,Agla,telephone
+2026-10-13,C-0005,Jus de bissap,6,1000,Agla,marche
+2026-10-13,C-0005,Jus d'ananas,6,1000,Agla,marche
+2026-10-13,C-0005,Sirop de gingembre,2,2500,Agla,marche
+2026-10-13,C-0006,Sirop de gingembre,3,2500,Fidjrossè,telephone
+2026-10-13,C-0007,Jus de bissap,4,1000,Agla,marche
+2026-10-13,C-0007,Jus d'ananas,5,1000,Agla,marche
+2026-10-13,C-0008,Sirop de bissap,2,2500,Gbégamey,whatsapp
+2026-10-13,C-0008,Sirop de gingembre,1,2500,Gbégamey,whatsapp
+2026-10-13,C-0009,Jus de corossol,8,1000,Gbégamey,marche
+2026-10-13,C-0009,Sirop de gingembre,2,2500,Gbégamey,marche
+2026-10-13,C-0009,Jus d'ananas,6,1000,Gbégamey,marche
+2026-10-13,C-0010,Jus de bissap,8,1000,Gbégamey,marche
+2026-10-13,C-0010,Sirop de bissap,1,2500,Gbégamey,marche
+2026-10-13,C-0010,Jus de gingembre,8,1000,Gbégamey,marche
+2026-10-13,C-0011,Jus de bissap,5,1000,Akpakpa,marche
+2026-10-13,C-0011,Sirop de bissap,1,2500,Akpakpa,marche
+2026-10-13,C-0011,Jus de corossol,5,1000,Akpakpa,marche
+2026-10-14,C-0012,Jus de corossol,6,1000,Akpakpa,telephone
+2026-10-14,C-0012,Sirop de bissap,2,2500,Akpakpa,telephone
+2026-10-14,C-0012,Jus d'ananas,7,1000,Akpakpa,telephone
+2026-10-14,C-0013,Sirop de bissap,2,2500,Fidjrossè,marche
+2026-10-14,C-0013,Jus de corossol,3,1000,Fidjrossè,marche
+2026-10-14,C-0013,Sirop de gingembre,2,2500,Fidjrossè,marche
+2026-10-14,C-0014,Jus de gingembre,7,1000,Fidjrossè,whatsapp
+2026-10-14,C-0015,Jus de corossol,4,1000,Zogbo,telephone
+2026-10-14,C-0015,Jus d'ananas,7,1000,Zogbo,telephone
+2026-10-14,C-0015,Jus de gingembre,5,1000,Zogbo,telephone
+2026-10-14,C-0016,Jus de corossol,7,1000,Gbégamey,marche
+2026-10-14,C-0016,Sirop de bissap,1,2500,Gbégamey,marche
+2026-10-15,C-0017,Jus de corossol,7,1000,Fidjrossè,telephone
+2026-10-15,C-0018,Jus de corossol,5,1000,Agla,marche
+2026-10-15,C-0018,Jus de gingembre,8,1000,Agla,marche
+2026-10-15,C-0019,Sirop de gingembre,2,2500,Agla,telephone
+2026-10-15,C-0020,Jus de gingembre,7,1000,Gbégamey,whatsapp
+2026-10-15,C-0021,Jus de bissap,2,1000,Gbégamey,whatsapp
+2026-10-15,C-0021,Sirop de gingembre,2,2500,Gbégamey,whatsapp
+2026-10-15,C-0022,Sirop de bissap,1,2500,Zogbo,marche
+2026-10-16,C-0023,Sirop de bissap,2,2500,Akpakpa,marche
+2026-10-16,C-0024,Jus de bissap,4,1000,Agla,whatsapp
+2026-10-16,C-0025,Jus de corossol,5,1000,Agla,marche
+2026-10-16,C-0025,Jus de gingembre,6,1000,Agla,marche
+2026-10-16,C-0025,Sirop de bissap,1,2500,Agla,marche
+2026-10-16,C-0026,Jus de bissap,7,1000,Zogbo,marche
+2026-10-16,C-0026,Jus de corossol,3,1000,Zogbo,marche
+2026-10-16,C-0027,Sirop de bissap,2,2500,Cadjèhoun,marche
+2026-10-16,C-0027,Jus de corossol,8,1000,Cadjèhoun,marche
+2026-10-17,C-0028,Jus de bissap,5,1000,Zogbo,whatsapp
+2026-10-17,C-0028,Sirop de gingembre,1,2500,Zogbo,whatsapp
+2026-10-17,C-0029,Jus d'ananas,6,1000,Akpakpa,whatsapp
+2026-10-17,C-0029,Jus de bissap,5,1000,Akpakpa,whatsapp
+2026-10-17,C-0029,Sirop de bissap,2,2500,Akpakpa,whatsapp
+2026-10-17,C-0030,Jus d'ananas,5,1000,Agla,whatsapp
+2026-10-17,C-0030,Jus de bissap,5,1000,Agla,whatsapp
+2026-10-17,C-0031,Jus de gingembre,6,1000,Zogbo,marche
+2026-10-17,C-0032,Sirop de bissap,2,2500,Zogbo,whatsapp
+2026-10-17,C-0032,Jus d'ananas,6,1000,Zogbo,whatsapp
+2026-10-18,C-0033,Jus de corossol,7,1000,Agla,whatsapp
+2026-10-18,C-0033,Jus de bissap,3,1000,Agla,whatsapp
+2026-10-18,C-0033,Jus de gingembre,2,1000,Agla,whatsapp
+2026-10-18,C-0034,Jus de corossol,8,1000,Agla,marche
+2026-10-18,C-0035,Sirop de gingembre,1,2500,Agla,whatsapp
+2026-10-18,C-0035,Jus de bissap,7,1000,Agla,whatsapp
+2026-10-18,C-0036,Jus de gingembre,5,1000,Zogbo,whatsapp
+2026-10-18,C-0036,Sirop de gingembre,2,2500,Zogbo,whatsapp
+2026-10-18,C-0036,Sirop de bissap,2,2500,Zogbo,whatsapp
+2026-10-18,C-0037,Jus de corossol,4,1000,Zogbo,telephone

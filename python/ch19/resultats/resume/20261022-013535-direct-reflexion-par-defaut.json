@@ -1,0 +1,47 @@
+{
+ "mode": "direct",
+ "texte": "Bonsoir Awa, aujourd'hui 6 commandes pour un total de 36500 FCFA : 16 jus de bissap, 8 jus d'ananas, 4 jus de gingembre, 2 sirops de gingembre et 1 sirop de bissap.\nDeux demandes attendent votre décision : un devis pour un mariage le 14 novembre à Cadjèhoun, 80 bouteilles (50 bissap, 30 ananas), et la demande d'un client régulier qui souhaite un prix pour 10 bouteilles chaque semaine.\nStocks à surveiller : le jus de corossol est en rupture, le jus d'",
+ "cout_dollars": 0.000462,
+ "duree_s": 4.5,
+ "tokens": {
+  "entree": 624,
+  "sortie": 800
+ },
+ "faits": {
+  "jour": "2026-10-20",
+  "commandes": 6,
+  "total_fcfa": 36500,
+  "produits_vendus": {
+   "Jus de bissap": 16,
+   "Jus d'ananas": 8,
+   "Jus de gingembre": 4,
+   "Sirop de gingembre": 2,
+   "Sirop de bissap": 1
+  },
+  "quartiers": {
+   "Fidjrossè": 1,
+   "Gbégamey": 1,
+   "Akpakpa": 1,
+   "Vèdoko": 1,
+   "Agla": 1,
+   "Cadjèhoun": 1
+  },
+  "demandes_pour_awa": [
+   {
+    "motif": "devis",
+    "resume": "Mariage le 14 novembre à Cadjèhoun : 80 bouteilles (50 bissap, 30 ananas)."
+   },
+   {
+    "motif": "remise",
+    "resume": "Client régulier : demande un prix pour 10 bouteilles chaque semaine."
+   }
+  ],
+  "en_rupture": [
+   "Jus de corossol"
+  ],
+  "stock_bas": {
+   "Jus d'ananas": 4,
+   "Sirop de gingembre": 3
+  }
+ }
+}

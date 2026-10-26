@@ -1,0 +1,78 @@
+{
+  "bon-01.jpg": {
+    "client": "Mme Akpovi",
+    "quartier": "Fidjrossè",
+    "total_lu": 11000,
+    "lignes": [
+      {
+        "produit": "Jus de bissap",
+        "quantite": 6,
+        "prix_unitaire_lu": 1000
+      },
+      {
+        "produit": "Sirop de gingembre",
+        "quantite": 2,
+        "prix_unitaire_lu": 2500
+      }
+    ]
+  },
+  "bon-02.jpg": {
+    "client": "M. Houngbo",
+    "quartier": "Akpakpa",
+    "total_lu": 3600,
+    "lignes": [
+      {
+        "produit": "Jus d'ananas",
+        "quantite": 4,
+        "prix_unitaire_lu": 900
+      }
+    ]
+  },
+  "bon-03.jpg": {
+    "client": "Mme Dossou",
+    "quartier": "Cadjèhoun",
+    "total_lu": null,
+    "lignes": [
+      {
+        "produit": "Jus de corossol",
+        "quantite": null,
+        "prix_unitaire_lu": 1000
+      },
+      {
+        "produit": "Jus de gingembre",
+        "quantite": 3,
+        "prix_unitaire_lu": 1000
+      }
+    ]
+  },
+  "bon-04.jpg": {
+    "client": "M. Agossou",
+    "quartier": "Gbégamey",
+    "total_lu": 5000,
+    "lignes": [
+      {
+        "produit": "Jus de bissap",
+        "quantite": 5,
+        "prix_unitaire_lu": 1000
+      }
+    ]
+  },
+  "facture-01.pdf": {
+    "fournisseur": "Emballages Sonagnon",
+    "numero": "F-2026-0412",
+    "total_lu": 32000,
+    "devise": "FCFA",
+    "lignes": [
+      {
+        "quantite": 200,
+        "prix_unitaire": 150,
+        "montant": 30000
+      },
+      {
+        "quantite": 200,
+        "prix_unitaire": 10,
+        "montant": 2000
+      }
+    ]
+  }
+}

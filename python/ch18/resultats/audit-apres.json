@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-21T21:20:59+00:00",
+ "resultats": {
+  "6. Une conversation neuve à chaque message": {
+   "messages_acceptes": 10,
+   "arret": "429",
+   "depense_du_jour_dollars": 0.0275,
+   "appels_a_claude": 11,
+   "une_vraie_cliente_ensuite": "fin",
+   "verdict": "tenu",
+   "duree_s": 0.92
+  },
+  "7. Rafale et corps géant": {
+   "rafale_acceptee": "20 sur 60 en 0.6 s",
+   "texte_de_10000_caracteres": 422,
+   "corps_de_3_mo": 413,
+   "corps_de_3_mo_traite_en_s": 0.01,
+   "verdict": "tenu",
+   "duree_s": 0.72
+  },
+  "8. Du HTML dans la réponse": {
+   "html_recu_comme_texte": true,
+   "insertions_dangereuses_dans_la_page": [],
+   "verdict": "tenu",
+   "duree_s": 0.07
+  },
+  "9. La conversation d'un autre client": {
+   "identifiants_devines_acceptes": 0,
+   "recapitulatif_de_la_victime": [
+    "en_attente"
+   ],
+   "outils_disponibles": "stock_verifier, commande_preparer, transmettre_a_awa (aucun ne lit une autre conversation)",
+   "verdict": "tenu",
+   "duree_s": 0.09
+  },
+  "10. La clé d'API": {
+   "cles_dans_les_fichiers_suivis": 0,
+   "cles_dans_l_historique_git": 0,
+   "fichiers_locaux_avec_une_cle": [],
+   "env_ignore_par_git": true,
+   "verdict": "tenu",
+   "duree_s": 3.76
+  },
+  "C1. Données gardées au-delà de 30 jours": {
+   "appels_a_purger_dans_l_application": [
+    "comptoir\\web.py:226",
+    "ch18\\donnees.py:24",
+    "ch18\\donnees.py:26"
+   ],
+   "tables_de_la_boutique_jamais_purgees": [],
+   "verdict": "tenu",
+   "duree_s": 0.05
+  },
+  "C2. Le client sait-il qu'il parle à une IA ?": {
+   "mention_dans_la_page": true,
+   "verdict": "tenu",
+   "duree_s": 0.0
+  }
+ }
+}

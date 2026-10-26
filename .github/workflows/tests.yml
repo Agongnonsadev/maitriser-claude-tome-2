@@ -1,0 +1,33 @@
+# Chapitre 20 : à chaque push et à chaque demande de fusion, les tests du Comptoir et l'audit du code du
+# chapitre 18. Gratuit : aucun test n'appelle l'API, et ce job n'a aucun accès à Claude.
+name: Tests du Comptoir
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Installer
+        run: pip install -e ".[tests]"
+      - name: Tests (sans appel à l'API)
+        run: python -m pytest -q
+      - name: Audit du code (chapitre 18, faux client)
+        run: python -m ch18.audit_code

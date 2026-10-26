@@ -1,0 +1,11 @@
+{
+  "name": "relecture",
+  "description": "Un sous-agent relecteur, en lecture seule, et la commande /relecture:relire, qui relisent un diff contre les règles du projet (CLAUDE.md, .claude/rules/).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Botlyx Academy"
+  },
+  "dependencies": [
+    "garde-secrets"
+  ]
+}

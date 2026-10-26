@@ -1,0 +1,102 @@
+# Chapitre 20 : sur chaque demande de fusion vers main, la non-régression du chapitre 17 et une relecture
+# par Claude. PAYANT : environ 0,03 $ pour la non-régression (plafonnée à 0,30 $), et le coût de la relecture.
+#
+# Aucune clé d'API dans le dépôt ni dans ses secrets : la fédération d'identité (Workload Identity Federation)
+# échange le jeton OIDC de GitHub contre un accès de courte durée à l'API, par un compte de service de la
+# Console. À régler une fois, dans la Console (page Workload identity, tuile GitHub Actions) et dans les
+# variables du dépôt (Settings > Secrets and variables > Actions > Variables) :
+#   ANTHROPIC_ORGANIZATION_ID, ANTHROPIC_FEDERATION_RULE_ID, ANTHROPIC_SERVICE_ACCOUNT_ID, ANTHROPIC_WORKSPACE_ID
+# La règle de fédération est limitée à ce dépôt (subject_prefix « repo:<compte>/<dépôt>:pull_request »).
+name: Claude sur la demande de fusion
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claude-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  ANTHROPIC_ORGANIZATION_ID: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+  ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+  ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+  ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+
+jobs:
+  non-regression:
+    # Une demande venue d'une copie du dépôt (fork) ne fait pas dépenser Awa ; un brouillon non plus.
+    if: github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write   # pour demander le jeton OIDC de GitHub
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Installer
+        run: pip install -e ".[tests]"
+      - name: Non-régression (33 cas, plafond 0,30 $)
+        env:
+          ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/jeton-github
+        run: |
+          # Le jeton de GitHub expire au bout de 5 minutes environ : on le renouvelle pendant la série,
+          # le SDK relit le fichier quand il rafraîchit son accès (documentation de la fédération d'identité).
+          jeton() {
+            curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" \
+              | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
+          }
+          jeton
+          ( while sleep 240; do jeton; done ) &
+          python -m ch17.evaluer regression --budget-max 0.3
+
+  relecture:
+    if: github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write   # les commentaires de relecture
+      id-token: write        # la fédération d'identité, et l'authentification de l'application GitHub de Claude
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Les consignes de relecture viennent de main, pas de la demande de fusion
+        # L'action remet .claude/ et CLAUDE.md de la branche de base à la racine, pas dans python/ : on le fait
+        # nous-mêmes, pour qu'une demande de fusion ne réécrive pas la consigne de son propre relecteur.
+        run: |
+          for chemin in python/.claude python/CLAUDE.md; do
+            if git cat-file -e "origin/${{ github.base_ref }}:$chemin" 2>/dev/null; then
+              rm -rf "$chemin" && git checkout "origin/${{ github.base_ref }}" -- "$chemin"
+            else
+              rm -rf "$chemin"   # absent de main : la demande de fusion n'apporte pas sa propre consigne
+            fi
+          done
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_organization_id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+          anthropic_federation_rule_id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+          anthropic_service_account_id: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+          anthropic_workspace_id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+          prompt: |
+            /relecture origin/${{ github.base_ref }}...HEAD
+
+            Puis, pour chaque point « À corriger » du rapport, publiez un commentaire en ligne sur la demande de
+            fusion, en français, à la ligne concernée. S'il n'y en a aucun, ne publiez rien.
+          claude_args: |
+            --add-dir python
+            --model sonnet
+            --max-turns 30
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(git diff *),Bash(git log *)"

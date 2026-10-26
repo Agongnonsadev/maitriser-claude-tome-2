@@ -1,0 +1,49 @@
+{
+ "mode": "lot",
+ "lot": "msgbatch_016E1PMuFpeEz8PAPsygZphN",
+ "texte": "Bonsoir Awa, aujourd'hui 6 commandes pour un total de 36 500 FCFA : 16 jus de bissap, 8 jus d'ananas, 4 jus de gingembre, 2 sirops de gingembre et 1 sirop de bissap.\nDeux demandes attendent votre décision : un devis pour un mariage à Cadjèhoun le 14 novembre (80 bouteilles, dont 50 de bissap et 30 d'ananas), et un client régulier qui demande un tarif pour 10 bouteilles par semaine.\nÀ surveiller : le jus de corossol est en rupture, le jus d'ananas ne reste qu'à 4 unités et le sirop de gingembre à 3.",
+ "coupe": false,
+ "cout_dollars": 9.3e-05,
+ "tokens": {
+  "entree": 623,
+  "sortie": 247
+ },
+ "duree_s": 84.9,
+ "faits": {
+  "jour": "2026-10-20",
+  "commandes": 6,
+  "total_fcfa": 36500,
+  "produits_vendus": {
+   "Jus de bissap": 16,
+   "Jus d'ananas": 8,
+   "Jus de gingembre": 4,
+   "Sirop de gingembre": 2,
+   "Sirop de bissap": 1
+  },
+  "quartiers": {
+   "Fidjrossè": 1,
+   "Gbégamey": 1,
+   "Akpakpa": 1,
+   "Vèdoko": 1,
+   "Agla": 1,
+   "Cadjèhoun": 1
+  },
+  "demandes_pour_awa": [
+   {
+    "motif": "devis",
+    "resume": "Mariage le 14 novembre à Cadjèhoun : 80 bouteilles (50 bissap, 30 ananas)."
+   },
+   {
+    "motif": "remise",
+    "resume": "Client régulier : demande un prix pour 10 bouteilles chaque semaine."
+   }
+  ],
+  "en_rupture": [
+   "Jus de corossol"
+  ],
+  "stock_bas": {
+   "Jus d'ananas": 4,
+   "Sirop de gingembre": 3
+  }
+ }
+}

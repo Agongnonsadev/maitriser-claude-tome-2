@@ -1,0 +1,8 @@
+{
+  "name": "garde-secrets",
+  "description": "Bloque un commit qui contient une clé d'API, un jeton, une clé privée ou un fichier .env (hook PreToolUse sur git commit).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Botlyx Academy"
+  }
+}

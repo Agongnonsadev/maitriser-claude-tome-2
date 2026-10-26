@@ -1,0 +1,61 @@
+{
+  "_note": "Données fictives : Délices d'Awa et ses fournisseurs sont imaginaires, créés pour « Maîtriser Claude », Tome 2.",
+  "recettes": {
+    "Jus de bissap": {
+      "Fleurs d'hibiscus séchées": 0.02,
+      "Sucre de canne": 0.03,
+      "Bouteille verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    },
+    "Jus de gingembre": {
+      "Gingembre frais": 0.08,
+      "Citron vert": 0.01,
+      "Sucre de canne": 0.028,
+      "Bouteille verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    },
+    "Jus d'ananas": {
+      "Ananas pain de sucre": 0.5,
+      "Bouteille verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    },
+    "Jus de corossol": {
+      "Pulpe de corossol": 0.25,
+      "Sucre de canne": 0.025,
+      "Bouteille verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    },
+    "Sirop de bissap": {
+      "Fleurs d'hibiscus séchées": 0.08,
+      "Sucre de canne": 0.3,
+      "Citron vert": 0.01,
+      "Flacon verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    },
+    "Sirop de gingembre": {
+      "Gingembre frais": 0.2,
+      "Sucre de canne": 0.3,
+      "Citron vert": 0.015,
+      "Flacon verre 50 cl": 1,
+      "Capsule": 1,
+      "Étiquette": 1
+    }
+  },
+  "unites": {
+    "Fleurs d'hibiscus séchées": "kg",
+    "Gingembre frais": "kg",
+    "Ananas pain de sucre": "pièce",
+    "Pulpe de corossol": "kg",
+    "Sucre de canne": "kg",
+    "Citron vert": "kg",
+    "Bouteille verre 50 cl": "unité",
+    "Flacon verre 50 cl": "unité",
+    "Capsule": "unité",
+    "Étiquette": "unité"
+  }
+}

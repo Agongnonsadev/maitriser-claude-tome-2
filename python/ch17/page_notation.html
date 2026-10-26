@@ -1,0 +1,237 @@
+<title>Relecture du Comptoir</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Mise en page : une colonne de fiches, chacune comme une conversation WhatsApp suivie de sa grille. */
+:root {
+  --fond: #f3f5f1; --carte: #ffffff; --encre: #1c2420; --doux: #5b6660; --trait: #d9ded7;
+  --bissap: #8a1c3c; --bulle-client: #e7ece4; --bulle-comptoir: #f6e9ee;
+  --oui: #2d6f48; --non: #b3261e; --inconnu: #946200;
+  --titre: "Zilla Slab", Georgia, serif; --texte: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --chasse: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --fond: #121614; --carte: #1b211e; --encre: #e6ebe7; --doux: #a1aca6; --trait: #313a35;
+  --bissap: #e07a98; --bulle-client: #26302b; --bulle-comptoir: #3a2430;
+  --oui: #6cc58f; --non: #f08a82; --inconnu: #e0b04a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --fond: #121614; --carte: #1b211e; --encre: #e6ebe7; --doux: #a1aca6; --trait: #313a35;
+  --bissap: #e07a98; --bulle-client: #26302b; --bulle-comptoir: #3a2430;
+  --oui: #6cc58f; --non: #f08a82; --inconnu: #e0b04a; color-scheme: dark }
+body { background: var(--fond); color: var(--encre); font: 16px/1.5 var(--texte);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 760px; margin: 0 auto; padding-block: 24px 64px; display: grid; gap: 20px; }
+h1 { font: 700 1.9rem/1.15 var(--titre); margin: 0; text-wrap: balance; color: var(--bissap); }
+h2 { font: 700 1.15rem/1.3 var(--titre); margin: 0; }
+p { margin: 0; }
+.chapeau { display: grid; gap: 10px; }
+.chapeau p { color: var(--doux); max-width: 65ch; }
+.barre { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--fond);
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+  padding-block: 10px; border-bottom: 1px solid var(--trait); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--fond); }
+.progres { font-variant-numeric: tabular-nums; font-weight: 600; }
+.etat { color: var(--doux); font-size: .9rem; }
+.boutons { display: flex; gap: 8px; flex-wrap: wrap; }
+button, .lien { font: 600 .9rem var(--texte); border: 1px solid var(--trait); background: var(--carte); color: var(--encre);
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; text-decoration: none; }
+button:focus-visible, .lien:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--bissap); outline-offset: 2px; }
+details.documents { background: var(--carte); border: 1px solid var(--trait); border-radius: 10px; padding: 12px 16px; }
+details.documents summary { cursor: pointer; font-weight: 600; }
+details.documents pre { white-space: pre-wrap; font: .85rem/1.5 var(--texte); max-height: 60vh; overflow: auto; margin: 12px 0 0; }
+.criteres-aide { display: grid; gap: 6px; font-size: .92rem; }
+.criteres-aide b { font-family: var(--chasse); font-weight: 400; color: var(--bissap); }
+.fiche { background: var(--carte); border: 1px solid var(--trait); border-radius: 12px; padding: 16px; display: grid; gap: 12px; }
+.fiche.notee { border-color: color-mix(in srgb, var(--oui) 45%, var(--trait)); }
+.tete { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.puce { font: 400 .75rem var(--chasse); letter-spacing: .04em; text-transform: uppercase; color: var(--doux);
+  border: 1px solid var(--trait); border-radius: 99px; padding: 1px 8px; }
+.bulle { border-radius: 12px; padding: 10px 14px; max-width: 92%; white-space: pre-wrap; min-width: 0; overflow-wrap: anywhere; }
+.client { background: var(--bulle-client); justify-self: start; border-top-left-radius: 2px; }
+.comptoir { background: var(--bulle-comptoir); justify-self: end; border-top-right-radius: 2px; }
+.qui { display: block; font-size: .75rem; color: var(--doux); margin-bottom: 2px; }
+.recap { font: .82rem/1.45 var(--chasse); white-space: pre-wrap; background: var(--fond); border: 1px dashed var(--trait);
+  border-radius: 8px; padding: 8px 12px; overflow-x: auto; }
+.contexte { display: grid; gap: 6px; font-size: .92rem; }
+.contexte dt { font-weight: 600; }
+.contexte dd { margin: 0 0 4px; color: var(--doux); white-space: pre-wrap; }
+.grille { display: grid; gap: 8px; border-top: 1px solid var(--trait); padding-top: 12px; }
+.ligne { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.ligne .nom { font-family: var(--chasse); font-size: .9rem; }
+.choix { display: inline-flex; border: 1px solid var(--trait); border-radius: 8px; overflow: hidden; }
+.choix button { border: 0; border-radius: 0; padding: 6px 12px; min-width: 76px; }
+.choix button + button { border-left: 1px solid var(--trait); }
+.choix button[aria-pressed="true"][data-v="oui"] { background: var(--oui); color: var(--carte); }
+.choix button[aria-pressed="true"][data-v="non"] { background: var(--non); color: var(--carte); }
+.choix button[aria-pressed="true"][data-v="inconnu"] { background: var(--inconnu); color: var(--carte); }
+textarea { font: .92rem var(--texte); width: 100%; box-sizing: border-box; min-height: 2.6em; border: 1px solid var(--trait);
+  border-radius: 8px; padding: 6px 10px; background: var(--fond); color: var(--encre); resize: vertical; }
+.masquee { display: none; }
+@media (prefers-reduced-motion: no-preference) { .fiche { transition: border-color .2s; } }
+</style>
+
+<main>
+  <header class="chapeau">
+    <h1>Relecture du Comptoir</h1>
+    <p>Chaque fiche montre un message de client et la réponse du Comptoir. Notez la réponse sur les quatre critères, avec ce que vous savez de Délices d'Awa et les documents ci-dessous. Le juge automatique note les mêmes réponses de son côté ; vous ne voyez pas ses notes, et lui ne voit pas les vôtres.</p>
+    <div class="criteres-aide" id="aide"></div>
+  </header>
+  <details class="documents">
+    <summary>Documents de Délices d'Awa (ceux que lit le Comptoir)</summary>
+    <pre id="documents"></pre>
+  </details>
+  <div class="barre">
+    <span class="progres" id="progres">0 notées sur 0</span>
+    <span class="etat" id="etat">Chargement…</span>
+    <div class="boutons">
+      <button type="button" id="filtre" aria-pressed="false">Seulement celles à noter</button>
+      <a class="lien masquee" id="telecharger" href="#" download="notes_humaines.json">Télécharger les notes</a>
+    </div>
+  </div>
+  <section id="fiches" aria-label="Réponses à noter"></section>
+</main>
+
+<script type="application/json" id="donnees">__DONNEES__</script>
+<script>
+(function () {
+  const DONNEES = JSON.parse(document.getElementById("donnees").textContent);
+  const AIDE = {
+    exacte: "Tout ce qu'elle affirme sur Délices d'Awa est conforme aux documents ; rien n'est inventé.",
+    sans_promesse: "Elle ne promet rien que le Comptoir ne peut pas tenir : remise, remboursement, délai, commande enregistrée…",
+    repond: "Elle fait ce que dit l'attendu : elle traite la demande, ou demande ce qui manque, ou la transmet ; sans rien oublier.",
+    ton: "Vouvoiement (ou anglais si le client écrit en anglais), poli, chaleureux, texte simple. La longueur ne compte pas ici."
+  };
+  const VERDICTS = ["oui", "non", "inconnu"];
+  const notes = {};   // essai -> {verdicts: {...}, commentaire}
+  let db = null, seulementANoter = false;
+
+  const $ = (id) => document.getElementById(id);
+  const cle = (essai) => essai.replace(/\//g, "~");
+  function el(tag, attrs, texte) {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, v);
+    if (texte !== undefined) e.textContent = texte;
+    return e;
+  }
+
+  $("documents").textContent = DONNEES.documents;
+  for (const c of DONNEES.criteres) {
+    const p = el("p"); p.append(el("b", {}, c), document.createTextNode(" : " + AIDE[c])); $("aide").append(p);
+  }
+
+  function complete(essai) {
+    const n = notes[essai];
+    return !!n && DONNEES.criteres.every((c) => n.verdicts && n.verdicts[c]);
+  }
+
+  function rendreProgres() {
+    const faites = DONNEES.fiches.filter((f) => complete(f.essai)).length;
+    $("progres").textContent = faites + " notées sur " + DONNEES.fiches.length;
+    for (const f of DONNEES.fiches) {
+      const carte = document.querySelector('[data-essai="' + cle(f.essai) + '"]');
+      if (!carte) continue;
+      carte.classList.toggle("notee", complete(f.essai));
+      carte.classList.toggle("masquee", seulementANoter && complete(f.essai));
+      for (const c of DONNEES.criteres) {
+        const v = notes[f.essai] && notes[f.essai].verdicts ? notes[f.essai].verdicts[c] : null;
+        carte.querySelectorAll('[data-c="' + c + '"] button').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+      }
+      const zone = carte.querySelector("textarea");
+      if (document.activeElement !== zone) zone.value = (notes[f.essai] && notes[f.essai].commentaire) || "";
+    }
+    majTelechargement();
+  }
+
+  async function enregistrer(essai) {
+    const n = notes[essai];
+    const corps = { essai: essai, verdicts: n.verdicts || {}, commentaire: n.commentaire || "", maj: new Date().toISOString() };
+    if (db) {
+      try { await db.collection("notes").doc(cle(essai)).set(corps); $("etat").textContent = "Enregistré"; }
+      catch (e) { $("etat").textContent = "Non enregistré (" + (e && e.code ? e.code : "erreur") + ") : réessayez dans un instant."; }
+    } else {
+      try { localStorage.setItem("notes-comptoir", JSON.stringify(notes)); $("etat").textContent = "Gardé dans ce navigateur"; }
+      catch (e) { $("etat").textContent = "Ce navigateur ne garde rien : téléchargez les notes avant de fermer."; }
+    }
+  }
+
+  function majTelechargement() {
+    if (db) return;
+    const lien = $("telecharger");
+    const sortie = {};
+    for (const [essai, n] of Object.entries(notes)) sortie[essai] = Object.assign({}, n.verdicts, { commentaire: n.commentaire || "" });
+    if (lien.href.startsWith("blob:")) URL.revokeObjectURL(lien.href);
+    lien.href = URL.createObjectURL(new Blob([JSON.stringify(sortie, null, 1)], { type: "application/json" }));
+  }
+
+  for (const [rang, f] of DONNEES.fiches.entries()) {
+    const carte = el("article", { class: "fiche", "data-essai": cle(f.essai) });
+    const tete = el("div", { class: "tete" });
+    tete.append(el("h2", {}, "Réponse " + (rang + 1)), el("span", { class: "puce" }, f.type), el("span", { class: "puce" }, f.cas));
+    const client = el("p", { class: "bulle client" }); client.append(el("span", { class: "qui" }, "Le client"), document.createTextNode(f.message));
+    const comptoir = el("p", { class: "bulle comptoir" }); comptoir.append(el("span", { class: "qui" }, "Le Comptoir"), document.createTextNode(f.reponse || "(aucun texte)"));
+    carte.append(tete, client, comptoir);
+    if (f.recapitulatif) carte.append(el("pre", { class: "recap", "aria-label": "Récapitulatif écrit par le code" }, f.recapitulatif));
+    const contexte = el("dl", { class: "contexte" });
+    contexte.append(el("dt", {}, "Ce que le système a fait"), el("dd", {}, f.actions), el("dt", {}, "Ce qu'on attend"), el("dd", {}, f.attendu));
+    carte.append(contexte);
+    const grille = el("div", { class: "grille" });
+    for (const c of DONNEES.criteres) {
+      const ligne = el("div", { class: "ligne" });
+      const choix = el("div", { class: "choix", role: "group", "aria-label": c, "data-c": c });
+      for (const v of VERDICTS) {
+        const b = el("button", { type: "button", "data-v": v, "aria-pressed": "false", id: cle(f.essai) + "-" + c + "-" + v }, v);
+        b.addEventListener("click", () => {
+          notes[f.essai] = notes[f.essai] || { verdicts: {}, commentaire: "" };
+          notes[f.essai].verdicts = Object.assign({}, notes[f.essai].verdicts, { [c]: v });
+          rendreProgres(); enregistrer(f.essai);
+        });
+        choix.append(b);
+      }
+      ligne.append(el("span", { class: "nom" }, c), choix);
+      grille.append(ligne);
+    }
+    const zone = el("textarea", { id: cle(f.essai) + "-commentaire", placeholder: "Une remarque, si besoin (facultatif)", "aria-label": "Remarque" });
+    zone.addEventListener("change", () => {
+      notes[f.essai] = notes[f.essai] || { verdicts: {}, commentaire: "" };
+      if ((notes[f.essai].commentaire || "") === zone.value) return;
+      notes[f.essai].commentaire = zone.value;
+      enregistrer(f.essai);
+    });
+    grille.append(zone);
+    carte.append(grille);
+    $("fiches").append(carte);
+  }
+
+  $("filtre").addEventListener("click", () => {
+    seulementANoter = !seulementANoter;
+    $("filtre").setAttribute("aria-pressed", String(seulementANoter));
+    rendreProgres();
+  });
+
+  function modeLocal() {
+    try { Object.assign(notes, JSON.parse(localStorage.getItem("notes-comptoir") || "{}")); } catch (e) {}
+    $("telecharger").classList.remove("masquee");
+    $("etat").textContent = "Notes gardées dans ce navigateur ; téléchargez-les à la fin.";
+    rendreProgres();
+  }
+
+  rendreProgres();
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("db").then((store) => {
+      if (!store) { modeLocal(); return; }
+      db = store;
+      $("etat").textContent = "Notes enregistrées à chaque clic";
+      db.collection("notes").onSnapshot((snap) => {
+        for (const d of snap.docs) {
+          const corps = d.data();
+          if (corps && corps.essai) notes[corps.essai] = { verdicts: corps.verdicts || {}, commentaire: corps.commentaire || "" };
+        }
+        rendreProgres();
+      }, () => { $("etat").textContent = "Lecture des notes interrompue : rechargez la page."; });
+    });
+  } else {
+    modeLocal();
+  }
+})();
+</script>

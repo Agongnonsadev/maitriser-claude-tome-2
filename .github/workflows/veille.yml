@@ -1,0 +1,79 @@
+# Chapitre 21 : chaque lundi, la veille du Comptoir. Les modèles qu'il appelle sont-ils toujours actifs ? Le SDK
+# a-t-il une nouvelle version majeure, donc une nouvelle version de l'API ? Gratuit : l'API Models ne consomme
+# aucun token. Le job échoue s'il y a une alerte : l'échec se voit dans l'onglet Actions du dépôt.
+# La fédération d'identité, comme dans claude.yml, avec une règle épinglée à la branche main du dépôt
+# (subject_prefix « repo:<compte>/<dépôt>:ref:refs/heads/main ») : une tâche planifiée tourne sur main.
+name: Veille des modèles et du SDK
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # le lundi à 6 h UTC, 7 h à Cotonou
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      ANTHROPIC_ORGANIZATION_ID: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+      ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID_MAIN }}
+      ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+      ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Installer
+        run: pip install -e .
+      - name: Veille
+        env:
+          ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/jeton-github
+        run: |
+          curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" \
+            | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
+          python -m ch21.veille --horizon 120
+
+  veille-typescript:
+    # La même veille pour la version TypeScript : les mêmes modèles (comptoir/config.ts), son propre SDK
+    # (@anthropic-ai/sdk), qui lit aussi la fédération d'identité.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      ANTHROPIC_ORGANIZATION_ID: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+      ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID_MAIN }}
+      ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+      ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+    defaults:
+      run:
+        working-directory: typescript
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: typescript/package-lock.json
+      - name: Installer
+        run: npm ci
+      - name: Veille
+        env:
+          ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/jeton-github
+        run: |
+          curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" \
+            | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
+          npx tsx ch21/veille.ts --horizon 120

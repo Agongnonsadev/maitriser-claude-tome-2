@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Comptoir d'Awa</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 0 auto; padding: 1rem;
+         background: #fdf8f3; color: #2b2118; }
+  h1 { font-size: 1.3rem; }
+  #fil { display: flex; flex-direction: column; gap: .5rem; min-height: 50vh; }
+  .bulle { padding: .6rem .8rem; border-radius: .8rem; max-width: 85%; white-space: pre-wrap; }
+  .client { align-self: flex-end; background: #ffd9b8; }
+  .comptoir { align-self: flex-start; background: #fff; border: 1px solid #ead9c8; }
+  #etat { min-height: 1.5rem; font-size: .9rem; color: #7a6656; }
+  #avertissement { font-size: .85rem; color: #7a6656; margin-top: -.5rem; }
+  form { display: flex; gap: .5rem; position: sticky; bottom: 0; background: #fdf8f3; padding: .5rem 0; }
+  input { flex: 1; min-width: 0; padding: .6rem; font-size: 1rem; }
+  button { padding: .6rem 1rem; font-size: 1rem; }
+</style>
+</head>
+<body>
+<h1>Le Comptoir d'Awa</h1>
+<!-- Chapitre 18 : la politique d'utilisation d'Anthropic demande qu'un assistant qui parle à des clients
+     dise qu'il est une IA, au moins au début de chaque échange ou dans l'interface. -->
+<p id="avertissement">Vous échangez avec le Comptoir, l'assistant automatique de Délices d'Awa : une intelligence
+artificielle, pas une personne. Pour parler à Awa, demandez-le simplement. Vos messages sont gardés 30 jours, puis
+supprimés ; pour les faire supprimer plus tôt, demandez-le à Awa.</p>
+<div id="fil" aria-live="polite"></div>
+<p id="etat"></p>
+<form id="formulaire">
+  <input id="question" maxlength="2000" autocomplete="off" placeholder="Votre question…" required>
+  <button id="envoyer">Envoyer</button>
+</form>
+<script>
+let conversation = null;
+const fil = document.getElementById("fil");
+const etat = document.getElementById("etat");
+const bouton = document.getElementById("envoyer");
+const champ = document.getElementById("question");
+
+function bulle(classe, texte) {
+  const div = document.createElement("div");
+  div.className = "bulle " + classe;
+  div.textContent = texte;  // jamais innerHTML : le texte de Claude n'est pas du code de la page
+  fil.append(div);
+  div.scrollIntoView({ block: "end" });
+  return div;
+}
+
+// Signale une connexion lente : rien reçu depuis 20 secondes, pas même un signe de vie.
+let minuteur = null;
+function surveiller() {
+  clearTimeout(minuteur);
+  minuteur = setTimeout(() => { etat.textContent = "Connexion lente… la réponse arrive."; }, 20000);
+}
+
+// Lit un flux SSE reçu en réponse à un POST (EventSource ne sait envoyer que des GET).
+async function* evenements(reponse) {
+  const lecteur = reponse.body.pipeThrough(new TextDecoderStream()).getReader();
+  let tampon = "";
+  while (true) {
+    const { value, done } = await lecteur.read();
+    if (done) return;
+    tampon += value;
+    let fin;
+    while ((fin = tampon.indexOf("\n\n")) >= 0) {
+      const bloc = tampon.slice(0, fin);
+      tampon = tampon.slice(fin + 2);
+      let nom = null, donnees = "";
+      for (const ligne of bloc.split("\n")) {
+        if (ligne.startsWith("event: ")) nom = ligne.slice(7);
+        else if (ligne.startsWith("data: ")) donnees += ligne.slice(6);
+      }
+      yield { nom, donnees: donnees ? JSON.parse(donnees) : null };  // nom null : signe de vie
+    }
+  }
+}
+
+// Envoie un message et affiche la réponse au fil de l'eau. En cas de coupure, renvoie
+// le même identifiant de message avec le nombre de morceaux déjà reçus : le serveur
+// reprend là, sans rappeler Claude et sans rien afficher deux fois.
+async function suivre(idMessage, texte, zone, recus = 0) {
+  for (let essai = 0; essai < 6; essai++) {
+    if (essai > 0) {
+      etat.textContent = "Connexion perdue, nouvelle tentative…";
+      await new Promise(r => setTimeout(r, Math.min(1000 * 2 ** (essai - 1), 8000)));
+    }
+    try {
+      surveiller();
+      const r = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ conversation, id_message: idMessage, texte, depuis: recus }),
+      });
+      if (r.status === 409) { etat.textContent = "Une réponse est déjà en cours."; return; }
+      if (r.status === 429) { etat.textContent = "Beaucoup de messages en peu de temps : réessayez dans une minute."; return; }
+      if (r.status === 413) { etat.textContent = "Message trop long."; return; }
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      etat.textContent = recus ? "Reprise…" : "Le Comptoir écrit…";
+      for await (const { nom, donnees } of evenements(r)) {
+        surveiller();
+        if (nom === "conversation") {
+          if (donnees.renouvelee) bulle("comptoir", "(Nouvelle conversation : la précédente était close.)");
+          conversation = donnees.conversation;
+        } else if (nom === "texte") {
+          zone.textContent += donnees.texte;
+          recus++;
+          etat.textContent = "Le Comptoir écrit…";
+        } else if (nom === "fin") {
+          etat.textContent = donnees.tronquee ? "(Réponse écourtée.)" : "";
+          return;
+        } else if (nom === "erreur") {
+          etat.textContent = donnees.message;
+          return;
+        } else if (nom === "refus") {
+          zone.textContent = donnees.message;  // le début déjà affiché est à jeter
+          etat.textContent = "";
+          return;
+        }
+      }
+      // Flux fermé sans « fin » : la connexion a lâché en route. On reprend.
+    } catch (e) {
+      // Pas de réseau, ou connexion coupée : on reprend aussi.
+    } finally {
+      clearTimeout(minuteur);
+    }
+  }
+  etat.textContent = "La connexion ne revient pas. ";
+  const reprendre = document.createElement("button");
+  reprendre.textContent = "Reprendre";
+  reprendre.onclick = async () => { reprendre.remove(); await suivre(idMessage, texte, zone, recus); };
+  etat.append(reprendre);
+}
+
+document.getElementById("formulaire").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const texte = champ.value.trim();
+  if (!texte) return;
+  champ.value = "";
+  bulle("client", texte);
+  const zone = bulle("comptoir", "");
+  bouton.disabled = true;  // un message à la fois : le serveur le refuse aussi
+  etat.textContent = "Le Comptoir écrit…";  // tout de suite, avant même le premier morceau
+  try { await suivre(crypto.randomUUID(), texte, zone); } finally { bouton.disabled = false; }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Chapitre 16 : le Comptoir en ligne sur un petit serveur, derrière Caddy, qui obtient et renouvelle
+# seul le certificat HTTPS (Let's Encrypt). Sur le serveur, dans ce dossier :
+#   cp .env.exemple .env   (puis le remplir)
+#   docker compose up -d --build
+services:
+  comptoir:
+    build:
+      context: ../..
+      dockerfile: ch16/deploiement/Dockerfile
+    env_file: .env
+    volumes:
+      - ./donnees:/donnees          # boutique.sqlite3 et autorisation.sqlite3
+    restart: unless-stopped
+    # Aucun port publié : seul Caddy joint le serveur, par le réseau interne de Docker.
+
+  caddy:
+    image: caddy:2.11.7
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      COMPTOIR_DOMAINE: ${COMPTOIR_DOMAINE}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_donnees:/data
+    restart: unless-stopped
+
+volumes:
+  caddy_donnees:

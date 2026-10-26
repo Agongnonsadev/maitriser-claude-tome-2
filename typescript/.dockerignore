@@ -1,0 +1,14 @@
+# Chapitre 16 : ce que Docker ne doit pas recevoir pour construire une image. Ni les dépendances locales, ni
+# les données des clients, ni les journaux, ni les secrets.
+node_modules/
+**/node_modules/
+.env
+**/.env
+donnees_clients/
+journal/
+rapports/
+**/resultats/
+tests/
+ch15/build/
+**/donnees/
+*.sqlite3

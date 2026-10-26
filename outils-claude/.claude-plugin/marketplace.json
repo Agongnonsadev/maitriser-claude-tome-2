@@ -1,0 +1,19 @@
+{
+  "name": "outils-yao",
+  "description": "Les garde-fous de Yao pour Claude Code, sortis du Comptoir d'Awa pour ses autres dépôts (chapitre 20 de Maîtriser Claude, Tome 2). Exemple fictif.",
+  "owner": {
+    "name": "Botlyx Academy"
+  },
+  "plugins": [
+    {
+      "name": "garde-secrets",
+      "source": "./plugins/garde-secrets",
+      "description": "Bloque un commit qui contient une clé d'API, un jeton, une clé privée ou un fichier .env."
+    },
+    {
+      "name": "relecture",
+      "source": "./plugins/relecture",
+      "description": "Un sous-agent relecteur et la commande /relecture:relire, qui relisent un diff contre les règles du projet."
+    }
+  ]
+}

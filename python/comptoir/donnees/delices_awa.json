@@ -1,0 +1,19 @@
+{
+  "_note": "Entreprise et chiffres fictifs (Délices d'Awa, Tome 1 de « Maîtriser Claude »). Source unique des prix : le prompt et le code les lisent ici.",
+  "produits": [
+    {"nom": "Jus de bissap", "format": "bouteille de 50 cl", "prix_fcfa": 1000},
+    {"nom": "Jus de gingembre", "format": "bouteille de 50 cl", "prix_fcfa": 1000},
+    {"nom": "Jus d'ananas", "format": "bouteille de 50 cl", "prix_fcfa": 1000},
+    {"nom": "Jus de corossol", "format": "bouteille de 50 cl", "prix_fcfa": 1000},
+    {"nom": "Sirop de bissap", "format": "flacon", "prix_fcfa": 2500},
+    {"nom": "Sirop de gingembre", "format": "flacon", "prix_fcfa": 2500}
+  ],
+  "conditions": [
+    "Commandes par WhatsApp, de 8 h à 19 h.",
+    "Livraison à Cotonou uniquement : le jour même pour toute commande passée avant 12 h, sinon le lendemain.",
+    "Livraison gratuite dès 5 bouteilles ; 500 FCFA en dessous.",
+    "Paiement : Mobile Money (MTN MoMo, Moov Money) ou espèces à la livraison.",
+    "Événements (mariages, baptêmes, anniversaires) : à partir de 30 bouteilles, sur devis, à commander au moins 7 jours à l'avance, acompte de 50 %.",
+    "Au-delà de 50 bouteilles, tarif sur devis : Awa répond sous 24 h."
+  ]
+}

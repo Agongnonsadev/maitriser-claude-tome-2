@@ -1,0 +1,25 @@
+{
+  "_note": "Données fictives : Délices d'Awa et ses fournisseurs sont imaginaires, créés pour « Maîtriser Claude », Tome 2.",
+  "evenements": [
+    {
+      "evenement": "Baptême",
+      "date": "2026-11-15",
+      "statut": "confirmé : acompte de 50 % versé le 16 octobre",
+      "bouteilles": {
+        "Jus de bissap": 60,
+        "Jus d'ananas": 40,
+        "Jus de gingembre": 20
+      },
+      "production": "la veille, le 14 novembre"
+    },
+    {
+      "evenement": "Mariage",
+      "date": "2026-12-05",
+      "statut": "devis envoyé le 15 octobre ; acompte non versé",
+      "bouteilles": {
+        "Jus d'ananas": 200
+      },
+      "production": "à prévoir si l'acompte est versé"
+    }
+  ]
+}

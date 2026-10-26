@@ -1,0 +1,10 @@
+{
+ "lot": "msgbatch_01SCophbTqE5yZqCWweARW51",
+ "duree_s": "entre 403 et 434 (état relevé toutes les 30 s)",
+ "jugements_compares": 120,
+ "meme_issue": 113,
+ "memes_verdicts": "472 sur 480",
+ "cout_par_lot": 0.0246,
+ "cout_en_direct": 0.0496,
+ "erreurs_par_lot": []
+}
