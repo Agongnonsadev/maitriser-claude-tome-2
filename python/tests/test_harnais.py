@@ -4,6 +4,8 @@ import asyncio
 
 import pytest
 
+pytest.importorskip("claude_agent_sdk")  # l'extra [agents] : pip install -e ".[tests,agents]"
+
 from ch13.avec_agent_sdk import LECTURE, garder, options
 from ch13.avec_managed_agents import executer, outils_personnalises, sans_references
 from comptoir.agent_reappro import Contexte, Garde, Reglages, creer_outils

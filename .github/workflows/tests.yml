@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.13"
       - name: Installer
-        run: pip install -e ".[tests]"
+        run: pip install -e ".[tests,agents,mcp]"   # avec les extras, pour que les tests des chapitres 13 à 16 tournent
       - name: Tests (sans appel à l'API)
         run: python -m pytest -q
       - name: Audit du code (chapitre 18, faux client)
